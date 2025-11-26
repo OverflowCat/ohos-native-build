@@ -161,7 +161,7 @@ for key in environment:
 #     shutil.copyfile(os.path.join(crossCompilePath, 'x86_64-unknown-linux-ohos-clang++'), os.path.join(crossCompilePath, 'x86_64-linux-ohos-clang++'))
 
 if len(environment['PATH_PREFIX']) != 0:
-    baseEnv['PATH'] = environment['PATH_PREFIX'] + 'C:\\Windows\\System32' if win else environment['PATH_PREFIX'] + baseEnv['PATH']
+    baseEnv['PATH'] = environment['PATH_PREFIX'] + baseEnv['PATH']
 
 baseEnv['OHOS_SDK'] = sdkDir.replace('\\', '/') if win else sdkDir
 

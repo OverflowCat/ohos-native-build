@@ -11,7 +11,7 @@ win:
     )
     if not exist "td\\example\\ohos" (
       cd td
-      git apply %SCRIPT_DIR%/../scripts/tdnapi/0001-Add-tdnapi-example-for-HarmonyOS.patch
+      git apply --ignore-whitespace --reject %SCRIPT_DIR%/../scripts/tdnapi/0001-Add-tdnapi-example-for-HarmonyOS.patch || echo "Patch applied with warnings"
       cd ..
     )
     if not exist "output\\%OHOS_LIBNAME%-gen-build" (
@@ -47,7 +47,7 @@ unix:
     if [ ! -d "$OHOS_LIBSRC" ] ; then
       git clone $OHOS_LIBURL
       cd td
-      git apply $SCRIPT_DIR/../scripts/tdnapi/0001-Add-tdnapi-example-for-HarmonyOS.patch
+      git apply --ignore-whitespace --reject $SCRIPT_DIR/../scripts/tdnapi/0001-Add-tdnapi-example-for-HarmonyOS.patch || echo "Patch applied with warnings"
       cd ..
     fi
 

@@ -15,6 +15,7 @@ def setEnv(arch, sdkDir, prefix) :
     env['CXXFLAGS'] = '-DOHOS_NDK -fPIC'
     env['LDFLAGS'] = ''
     env['BUILD_OS'] = sys.platform
+    env['OHOS_CMAKE_TOOLCHAIN_FILE'] = sdkDir + '/native/build/cmake/ohos.toolchain.cmake'
     env['CMAKE_PREFIX_ARGS'] = '-LH -DCMAKE_SKIP_RPATH=ON -DCMAKE_SKIP_INSTALL_RPATH=ON'
     if env['BUILD_OS'] == "win": 
         env['CMAKE_PREFIX_ARGS'] = env['CMAKE_PREFIX_ARGS'] + ' -G"Unix Makefiles"'
